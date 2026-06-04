@@ -22,7 +22,7 @@ function App() {
   // Fetch tasks
   const fetchTasks = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/tasks");
+      const response = await axios.get("https://task-55yk.onrender.com/tasks");
       setTasks(response.data);
     } catch (error) {
       console.error("Error fetching tasks:", error);
@@ -43,7 +43,7 @@ function App() {
     }
 
     try {
-      const response = await axios.post("http://localhost:3000/tasks", {
+      const response = await axios.post("https://task-55yk.onrender.com/tasks", {
         subject,
         taskDetails,
         deadline,
@@ -62,7 +62,7 @@ function App() {
   // Delete task
   const deleteTask = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/tasks/${id}`);
+      await axios.delete(`https://task-55yk.onrender.com/tasks/${id}`);
 
       setTasks(tasks.filter((task) => task._id !== id));
     } catch (error) {
